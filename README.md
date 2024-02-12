@@ -1,6 +1,6 @@
 # Finder: Text Similarity Clustering
 
-This Python code provides a function to find and cluster similar texts within a DataFrame based on a similarity threshold. It utilizes the SequenceMatcher from the difflib library to calculate text similarity ratios and assigns unique cluster IDs to similar texts. Access the code [[ here ]](https://github.com/ergoncugler/finder-text-similarity-clustering/blob/main/finder.py).
+This code provides a function to find and cluster similar texts within a DataFrame based on a similarity threshold. It utilizes the SequenceMatcher from the difflib library to calculate text similarity ratios and assigns unique cluster IDs to similar texts. Access the code [[ here ]](https://github.com/ergoncugler/finder-text-similarity-clustering/blob/main/finder.py).
 
 ## Functions:
 ### **text_similarity(text1, text2, similarity_threshold=0.95)**
