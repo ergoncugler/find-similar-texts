@@ -118,12 +118,19 @@ if __name__ == "__main__":
     text_column = 'text'
 
     # Find similar texts and IDs
-    df, unique_counts = find_similar_texts(df, text_column, similarity_threshold)
+    similar_texts, id_dict = find_similar_texts(df, text_column, similarity_threshold)
+
+    # Add the new column to the dataframe
+    df[f'ID_{similarity_threshold*100}%'] = df.index.map(id_dict)
 
     # Display the updated dataframe
     print("Updated DataFrame:")
     display(df)
 
+    # Count unique and repeated items
+    unique_counts = df[f'ID_{similarity_threshold*100}%'].value_counts().reset_index()
+    unique_counts.columns = [f'ID_{similarity_threshold*100}%', 'Quantity']
+    
     # Display the count dataframe
     print("\nCount of Unique and Repeated Items (in descending order):")
     display(unique_counts)
